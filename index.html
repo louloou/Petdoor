@@ -1,66 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Petdoor</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetDoor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <aside class="sidebar">
+  <nav class="navbar">
+
     <div class="logo">
-      <h2>PET DOOR</h2>
-      <p>Control de Acceso</p>
+
+      <img src="img/logo.png" alt="Logo Petdoor">
+
+      <span>
+        <span class="logo-p">P</span>etdoor
+      </span>
+
+    </div>
+    <ul class="nav-links">
+
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#app">Aplicación</a></li>
+      <li><a href="#estadisticas">Estadísticas</a></li>
+
+    </ul>
+
+    <div class="menu-btn" id="menu-btn">
+      ☰
     </div>
 
-    <nav class="menu">
-      <a href="#" class="active">🚪 Abrir Puerta</a>
-      <a href="#">📋 Historial</a>
-      <a href="#">⚙ Reporte Semanal</a>
-    </nav>
-  </aside>
+  </nav>
 
-  <main class="main-content">
+  <section class="inicio" id="inicio">
 
-    <header class="topbar">
-      <h1>Panel Principal</h1>
+    <div class="inicio-text">
 
-      <div class="status">
-        <span class="dot online"></span>
-        Sistema conectado
+      <h1>La puerta inteligente para tu mascota</h1>
+
+      <p>
+        Petdoor es una puerta automática para mascotas diseñada
+        para brindar seguridad, comodidad y control mediante sensores
+        inteligentes y una aplicación móvil conectada.
+      </p>
+
+      <button>
+        Conocer más
+      </button>
+
+    </div>
+
+    <div class="inicio-image">
+
+      <img src="img/mascota.jpg" alt="Mascota">
+
+    </div>
+
+  </section>
+  <section class="app-section" id="app">
+
+    <div class="app-text">
+
+      <h2>Control desde la aplicación</h2>
+
+      <p>
+        Desde la aplicación móvil el usuario puede abrir o cerrar
+        la puerta remotamente, visualizar registros y consultar
+        la actividad de la mascota.
+      </p>
+
+    </div>
+
+    <div class="phone">
+
+      <div class="screen">
+
+        <div class="pet-name-area">
+
+  <input 
+    type="text" 
+    id="petNameInput" 
+    placeholder="Nombre de la mascota"
+  >
+
+  <button class="save-name-btn" onclick="cambiarNombre()">
+    Guardar
+  </button>
+
+</div>
+
+<h3 id="petName">
+  Mascota 🐶
+</h3>
+
+
+        <div class="door-status">
+
+          <p>Estado de puerta</p>
+
+          <h2 id="estado">
+            CERRADA
+          </h2>
+
+        </div>
+
+        <div class="controls">
+
+          <button class="open-btn">
+            Abrir Puerta
+          </button>
+
+          <button class="close-btn">
+            Cerrar Puerta
+          </button>
+
+        </div>
+
+        <div class="logs">
+
+          <h4>Registros</h4>
+
+          <ul>
+
+            <li>08:10 → Entrada</li>
+            <li>10:45 → Salida</li>
+            <li>13:20 → Entrada</li>
+            <li>18:05 → Salida</li>
+
+          </ul>
+
+        </div>
+
       </div>
-    </header>
 
-    <!-- TARJETAS -->
-    <section class="cards">
+    </div>
 
-      <div class="card">
-        <h3>Estado de la puerta</h3>
-        <p class="big-text open">ABIERTA</p>
+  </section>
+
+  <section class="stats-section" id="estadisticas">
+
+    <h2>Estadísticas</h2>
+
+    <div class="stats-container">
+
+      <div class="stat-box">
+
+        <h3>Entradas</h3>
+
+        <p>24</p>
+
       </div>
 
-      <div class="card">
-        <h3>Último acceso</h3>
-        <p>Juan Pérez</p>
-        <small>07/05/2026 - 14:32</small>
+      <div class="stat-box">
+
+        <h3>Salidas</h3>
+
+        <p>22</p>
+
       </div>
 
-      <div class="card">
-        <h3>Modo seguridad</h3>
-        <button class="btn">Activar</button>
+      <div class="stat-box">
+
+        <h3>Promedio diario</h3>
+
+        <p>6</p>
+
       </div>
 
-    </section>
+    </div>
 
-    <section class="control-panel">
-      <h2>Control rápido</h2>
+  </section>
+  <footer>
 
-      <div class="buttons">
-        <button class="primary">Abrir Puerta</button>
-        <button class="danger">Cerrar Puerta</button>
-      </div>
-    </section>
+    <p>
+      Petdoor - Lourdes Bray Caballero y Sasha Cisneros
+    </p>
 
-</main>
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
