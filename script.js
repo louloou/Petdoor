@@ -6,7 +6,7 @@ function cambiarNombre(){
 
     if(input.value.trim() !== ""){
 
-        petName.innerText = input.value + " 🐶";
+        petName.innerText = input.value;
 
     }
 

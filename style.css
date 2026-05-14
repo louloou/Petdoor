@@ -7,32 +7,20 @@
     font-family:'Poppins', sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     background:#f3f4f4;
-    color:#2e2450;
 }
-
-/* NAVBAR */
 
 .navbar{
     width:100%;
     height:80px;
 
+    background:#2e2450;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
 
     padding:0 8%;
-
-    background:#573f94;
-
-    position:sticky;
-    top:0;
-    z-index:1000;
 
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
@@ -40,39 +28,54 @@ body{
 .logo{
     display:flex;
     align-items:center;
+
     gap:12px;
+}
 
-    color:#fcb81e;
-
-    font-size:1.8rem;
-    font-weight:600;
+.logo img{
+    width:50px;
+    height:50px;
 }
 
 .logo > span{
     color:white;
+    font-size:1.8rem;
+    font-weight:600;
 }
 
 .logo-p{
-    color:#fcb81e !important;
+    color:#fcb81e;
 }
 
-.logo img{
-    width:45px;
-    height:45px;
+.navbar{
+    width:100%;
+    height:80px;
 
-    object-fit:contain;
+    background:#2e2450;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .nav-links{
     display:flex;
     gap:30px;
+
     list-style:none;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#f3f4f4;
+
+    color:white;
+
     font-weight:500;
+
     transition:0.3s;
 }
 
@@ -80,127 +83,19 @@ body{
     color:#fcb81e;
 }
 
-.menu-btn{
-    display:none;
-    color:#fcb81e;
-    font-size:2rem;
-    cursor:pointer;
-}
-
-/* INICIO */
-
-.inicio{
-    min-height:90vh;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    gap:50px;
-
-    padding:60px 8%;
-
-    flex-wrap:wrap;
-}
-
-.inicio-text{
-    flex:1;
-}
-
-.inicio-text h1{
-    font-size:3.5rem;
-    line-height:1.1;
-    margin-bottom:25px;
-
-    color:#2e2450;
-}
-
-.inicio-text p{
-    font-size:1.1rem;
-    line-height:1.8;
-    margin-bottom:30px;
-
-    color:#573f94;
-}
-
-.inicio-text button{
-    padding:15px 35px;
-
-    border:none;
-    border-radius:14px;
-
-    background:#fcb81e;
-    color:#2e2450;
-
-    font-size:1rem;
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.inicio-text button:hover{
-    background:#573f94;
-    color:#f3f4f4;
-
-    transform:translateY(-3px);
-}
-
-.inicio-image{
-    flex:1;
-
-    display:flex;
-    justify-content:center;
-}
-
-.inicio-image img{
-    width:100%;
-    max-width:420px;
-
-    border-radius:30px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-/* APP */
-
 .app-section{
-    padding:100px 8%;
+    min-height:calc(100vh - 80px);
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    gap:70px;
-
-    flex-wrap:wrap;
-
-    background:white;
+    padding:40px 20px;
 }
-
-.app-text{
-    max-width:500px;
-}
-
-.app-text h2{
-    font-size:2.8rem;
-    margin-bottom:20px;
-
-    color:#2e2450;
-}
-
-.app-text p{
-    font-size:1.05rem;
-    line-height:1.8;
-
-    color:#573f94;
-}
-
-/* TELEFONO */
 
 .phone{
-    width:320px;
+    width:100%;
+    max-width:380px;
 
     background:#2e2450;
 
@@ -219,22 +114,12 @@ body{
     padding:25px;
 }
 
-.screen h3{
-    text-align:center;
-    margin-bottom:20px;
-
-    font-size:1.5rem;
-
-    color:#2e2450;
-}
-
-/* NOMBRE MASCOTA */
-
 .pet-name-area{
     display:flex;
+
     gap:10px;
+
     margin-bottom:20px;
-    width:100%;
 }
 
 .pet-name-area input{
@@ -249,11 +134,7 @@ body{
 
     outline:none;
 
-    font-size:0.95rem;
-
     color:#2e2450;
-
-    min-width:0;
 }
 
 .save-name-btn{
@@ -263,7 +144,7 @@ body{
     border-radius:12px;
 
     background:#573f94;
-    color:#f3f4f4;
+    color:white;
 
     cursor:pointer;
 
@@ -276,31 +157,40 @@ body{
     background:#fcb81e;
     color:#2e2450;
 }
-/* ESTADO */
+
+#petName{
+    text-align:center;
+
+    margin-bottom:25px;
+
+    color:#2e2450;
+}
+
 
 .door-status{
-    background:#a9a0c5;
+    background:#dcd7ec;
 
-    padding:18px;
+    border-radius:20px;
 
-    border-radius:18px;
+    padding:25px;
 
     text-align:center;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .door-status p{
     color:#2e2450;
-    margin-bottom:8px;
+
+    margin-bottom:10px;
 }
 
-.door-status h2{
-    color:#2e2450;
-    font-size:2rem;
+#estado{
+    color:#ef4444;
+
+    font-size:2.2rem;
 }
 
-/* BOTONES */
 
 .controls{
     display:flex;
@@ -308,16 +198,16 @@ body{
 
     gap:15px;
 
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 .open-btn,
 .close-btn{
     border:none;
 
-    padding:15px;
+    padding:16px;
 
-    border-radius:14px;
+    border-radius:15px;
 
     font-size:1rem;
     font-weight:600;
@@ -334,22 +224,19 @@ body{
 
 .close-btn{
     background:#573f94;
-    color:#f3f4f4;
+    color:white;
 }
 
-.open-btn:hover{
-    background:#ddb46a;
-    transform:scale(1.03);
-}
-
+.open-btn:hover,
 .close-btn:hover{
-    background:#2e2450;
     transform:scale(1.03);
 }
 
-/* REGISTROS */
+.logs{
+    margin-bottom:30px;
+}
 
-.logs h4{
+.logs h3{
     margin-bottom:15px;
 
     color:#2e2450;
@@ -373,133 +260,7 @@ body{
     border-left:5px solid #fcb81e;
 }
 
-/* ESTADISTICAS */
-
-.stats-section{
-    padding:100px 8%;
-
-    text-align:center;
-}
-
-.stats-section h2{
-    font-size:2.7rem;
-    margin-bottom:50px;
-
-    color:#2e2450;
-}
-
-.stats-container{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap;
-}
-
-.stat-box{
-    width:240px;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-
-    transition:0.3s;
-}
-
-.stat-box:hover{
-    transform:translateY(-5px);
-}
-
-.stat-box h3{
-    margin-bottom:15px;
-    color:#573f94;
-}
-
-.stat-box p{
-    font-size:2.5rem;
-    font-weight:600;
-
-    color:#fcb81e;
-}
-
-/* FOOTER */
-
-footer{
-    background:#2e2450;
-    color:#f3f4f4;
-
-    text-align:center;
-
-    padding:30px;
-}
-
-footer p{
-    font-size:0.95rem;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-    .inicio{
-        text-align:center;
-    }
-
-    .inicio-text h1{
-        font-size:2.7rem;
-    }
-
-    .app-text{
-        text-align:center;
-    }
-
-}
-
-@media(max-width:768px){
-
-    .menu-btn{
-        display:block;
-    }
-
-    .nav-links{
-        position:absolute;
-
-        top:80px;
-        left:0;
-
-        width:100%;
-
-        background:#2e2450;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        padding:25px 0;
-
-        display:none;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .inicio-text h1{
-        font-size:2.2rem;
-    }
-
-    .app-text h2,
-    .stats-section h2{
-        font-size:2rem;
-    }
-
-    .phone{
-        width:100%;
-        max-width:320px;
-    }
+@media(max-width:480px){
 
     .pet-name-area{
         flex-direction:column;
