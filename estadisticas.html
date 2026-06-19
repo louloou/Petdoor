@@ -1,106 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estadisticas Petdoor</title>
+    <title>Estadísticas Petdoor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav class="navbar">
 
-    <div class="logo">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Petdoor">
 
-        <img src="img/logo.png" alt="Logo Petdoor">
+            <span>
+                <span class="logo-p">P</span>etdoor
+            </span>
+        </div>
 
-        <span>
-            <span class="logo-p">P</span>etdoor
-        </span>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="estadisticas.html">Estadísticas</a></li>
+        </ul>
+
+    </nav>
+
+    <section class="app-section">
+
+        <div class="phone">
+
+            <div class="screen">
+
+                <!-- ESTADÍSTICAS -->
+
+               <div class="stats-section">
+
+    <h3>Actividad de la mascota</h3>
+
+    <div class="stats-cards">
+
+        <div class="stat-card">
+            <p>Entradas</p>
+            <h2 id="entradas">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Salidas</p>
+            <h2 id="salidas">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Hora pico</p>
+            <h2 id="horarioFrecuente">--</h2>
+        </div>
 
     </div>
 
-    <ul class="nav-links">
+</div>
 
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="estadisticas.html">Estadísticas</a></li>
+                <!-- GRÁFICO -->
 
-    </ul>
-</nav>
+                <div class="chart-section">
 
-<section class="app-section">
+                    <h3>Horarios de actividad</h3>
 
-    <div class="phone">
+                    <div class="chart">
 
-        <div class="screen">
-            <!-- ESTADISTICAS -->
+                        <div class="bar" id="bar8" style="height:60%;">
+                            <span>8hs</span>
+                        </div>
 
-            <div class="stats-section">
+                        <div class="bar" id="bar10" style="height:85%;">
+                            <span>10hs</span>
+                        </div>
 
-                <h3>Estadísticas semanales</h3>
+                        <div class="bar" id="bar13" style="height:45%;">
+                            <span>13hs</span>
+                        </div>
 
-                <div class="stats-cards">
-
-                    <div class="stat-card">
-
-                        <p>Entradas</p>
-
-                        <h2>24</h2>
-
-                    </div>
-
-                    <div class="stat-card">
-
-                        <p>Salidas</p>
-
-                        <h2>22</h2>
+                        <div class="bar" id="bar18" style="height:95%;">
+                            <span>18hs</span>
+                        </div>
 
                     </div>
 
-                    <div class="stat-card">
+                </div>
 
-                        <p>Promedio diario</p>
+                <!-- ÚLTIMOS MOVIMIENTOS -->
 
-                        <h2>6</h2>
+                <div class="logs">
 
-                    </div>
+                    <h3>Últimos movimientos</h3>
+
+                    <ul id="listaMovimientos">
+
+                        <li>08:10 → Entrada</li>
+                        <li>10:45 → Salida</li>
+                        <li>13:20 → Entrada</li>
+                        <li>18:05 → Salida</li>
+
+                    </ul>
 
                 </div>
 
             </div>
 
-            <!-- GRAFICO -->
-
-            <div class="chart-section">
-
-                <h3>Horarios de actividad</h3>
-
-                <div class="chart">
-
-                    <div class="bar" style="height:60%;">
-                        <span>8hs</span>
-                    </div>
-
-                    <div class="bar" style="height:85%;">
-                        <span>10hs</span>
-                    </div>
-
-                    <div class="bar" style="height:45%;">
-                        <span>13hs</span>
-                    </div>
-
-                    <div class="bar" style="height:95%;">
-                        <span>18hs</span>
-                    </div>
-
-                </div>
-
-            </div> 
-
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <script type="module" src="estadisticas.js"></script>
 
 </body>
 </html>
