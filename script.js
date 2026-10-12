@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHwm1Y4mwXdxyBFrNaBvghzelBdajLra4",
@@ -15,25 +15,44 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const estadoRef = ref(db, "Puerta/Estado");
+const estadoRef = ref(db, "petdoor/estado");
+const comandoRef = ref(db, "petdoor/comando");
 
+// Mostrar el estado de la puerta en vivo
 onValue(estadoRef, (snapshot) => {
-    document.getElementById("estado").innerText = snapshot.val();
+    const valor = snapshot.val();
+    console.log("Dato recibido:", valor);
+    document.getElementById("estado").innerText =
+        valor ? valor.toUpperCase() : "SIN DATOS";
 });
 
-window.cambiarNombre = function() {
+// Botones
+window.abrirPuerta = function () {
+    console.log("Botón ABRIR tocado");
+    set(comandoRef, "abrir")
+        .then(() => console.log("comando = abrir guardado"))
+        .catch((e) => console.error("Error al escribir:", e));
+};
 
+window.cerrarPuerta = function () {
+    console.log("Botón CERRAR tocado");
+    set(comandoRef, "cerrar")
+        .then(() => console.log("comando = cerrar guardado"))
+        .catch((e) => console.error("Error al escribir:", e));
+};
+
+// Nombre de la mascota (se guarda en el navegador)
+window.cambiarNombre = function () {
     const input = document.getElementById("petNameInput");
-    const petName = document.getElementById("petName");
-
-    if(input.value.trim() !== ""){
-        petName.innerText = input.value;
+    const nombre = input.value.trim();
+    if (nombre !== "") {
+        document.getElementById("petName").innerText = nombre;
+        localStorage.setItem("petName", nombre);
+        input.value = "";
     }
+};
+
+const nombreGuardado = localStorage.getItem("petName");
+if (nombreGuardado) {
+    document.getElementById("petName").innerText = nombreGuardado;
 }
-
-onValue(estadoRef, (snapshot) => {
-    console.log("Dato recibido:", snapshot.val());
-
-    document.getElementById("estado").innerText = snapshot.val();
-});
-
