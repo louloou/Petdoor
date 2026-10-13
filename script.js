@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+import { getDatabase, ref, onValue, set, query, limitToLast } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHwm1Y4mwXdxyBFrNaBvghzelBdajLra4",
@@ -56,3 +56,31 @@ const nombreGuardado = localStorage.getItem("petName");
 if (nombreGuardado) {
     document.getElementById("petName").innerText = nombreGuardado;
 }
+
+// Últimos movimientos (los 5 más recientes)
+const registrosRef = query(ref(db, "petdoor/registros"), limitToLast(5));
+
+onValue(registrosRef, (snapshot) => {
+    const lista = document.getElementById("listaMovimientos");
+    if (!lista) return;
+    const items = [];
+
+    snapshot.forEach((hijo) => {
+        items.push(hijo.val());
+    });
+
+    items.sort((a, b) => b.ts - a.ts); // más reciente primero
+
+    if (items.length === 0) {
+        lista.innerHTML = "<li>Sin movimientos todavía</li>";
+        return;
+    }
+
+    lista.innerHTML = items.map((r) => {
+        const fecha = new Date(r.ts);
+        const hora = fecha.toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" });
+        const dia = fecha.toLocaleDateString("es-AR", { day: "2-digit", month: "2-digit" });
+        const tipo = r.tipo === "entrada" ? "Entrada" : "Salida";
+        return `<li>${dia} ${hora} → ${tipo}</li>`;
+    }).join("");
+});
