@@ -5,91 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Petdoor App</title>
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2e2450">
+<link rel="apple-touch-icon" href="img/logo.png">
 </head>
 
 <body>
 <nav class="navbar">
 
     <div class="logo">
-
         <img src="img/logo.png" alt="Logo Petdoor">
-
         <span>
             <span class="logo-p">P</span>etdoor
         </span>
-
     </div>
 
     <ul class="nav-links">
-
         <li><a href="index.html">Inicio</a></li>
         <li><a href="estadisticas.html">Estadísticas</a></li>
-
     </ul>
 
 </nav>
 
 <section class="app-section">
 
-        <div class="phone">
+    <div class="phone">
 
-            <div class="screen">
+        <div class="screen">
 
-                <div class="pet-name-area">
+            <div class="pet-name-area">
+                <input
+                    type="text"
+                    id="petNameInput"
+                    placeholder="Nombre de la mascota"
+                >
+                <button class="save-name-btn" onclick="cambiarNombre()">
+                    Guardar
+                </button>
+            </div>
 
-                    <input 
-                        type="text" 
-                        id="petNameInput" 
-                        placeholder="Nombre de la mascota"
-                    >
+            <label class="pet-photo" for="fotoInput">
+                <img id="petFoto" alt="Foto de la mascota">
+                <span id="fotoVacia">🐾</span>
+                <span class="photo-edit">Cambiar foto</span>
+            </label>
+            <input type="file" id="fotoInput" accept="image/*" hidden>
 
-                    <button class="save-name-btn" onclick="cambiarNombre()">
-                        Guardar
-                    </button>
+            <h2 id="petName">
+                Mascota
+            </h2>
 
-                </div>
+            <div class="door-status">
+                <p>Estado de puerta</p>
+                <h1 id="estado">CERRADA</h1>
+            </div>
 
-                <h2 id="petName">
-                    Mascota
-                </h2>
+            <div class="door-status" id="cajaUbicacion">
+                <p>Mascota ahora</p>
+                <h1 id="ubicacion">--</h1>
+                <p id="tiempoAfuera"></p>
+            </div>
 
-                <div class="door-status">
+            <div class="controls">
+                <button class="open-btn" onclick="abrirPuerta()">
+                    Abrir Puerta
+                </button>
 
-                    <p>Estado de puerta</p>
+                <button class="close-btn" onclick="cerrarPuerta()">
+                    Cerrar Puerta
+                </button>
+            </div>
 
-                    <h1 id="estado">
-                        CERRADA
-                    </h1>
+            <div class="logs">
+                <h3>Últimos movimientos</h3>
 
-                </div>
-
-                <div class="controls">
-
-                    <button class="open-btn" onclick="abrirPuerta()">
-                        Abrir Puerta
-                    </button>
-
-                    <button class="close-btn" onclick="cerrarPuerta()">
-                        Cerrar Puerta
-                    </button>
-
-                </div>
-
-                <div class="logs">
-
-                    <h3>Últimos movimientos</h3>
-
-                    <ul id="listaMovimientos">
-                        <li>Cargando...</li>
-                    </ul
-
-                </div>
-
+                <ul id="listaMovimientos">
+                    <li>Cargando...</li>
+                </ul>
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 <script type="module" src="script.js"></script>
 

@@ -18,6 +18,7 @@ body{
     background:#2e2450;
 
     display:flex;
+    justify-content:space-between;
     align-items:center;
 
     padding:0 8%;
@@ -45,21 +46,6 @@ body{
 
 .logo-p{
     color:#fcb81e;
-}
-
-.navbar{
-    width:100%;
-    height:80px;
-
-    background:#2e2450;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:0 8%;
-
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .nav-links{
@@ -158,6 +144,64 @@ body{
     color:#2e2450;
 }
 
+/* FOTO DE LA MASCOTA */
+.pet-photo{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:110px;
+    height:110px;
+
+    margin:0 auto 15px auto;
+
+    border-radius:50%;
+    background:#dcd7ec;
+    border:4px solid #573f94;
+
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.pet-photo img{
+    display:none;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.pet-photo.con-foto img{
+    display:block;
+}
+
+#fotoVacia{
+    font-size:2.8rem;
+}
+
+.pet-photo.con-foto #fotoVacia{
+    display:none;
+}
+
+.photo-edit{
+    position:absolute;
+    bottom:0;
+    left:0;
+
+    width:100%;
+
+    padding:3px 0;
+
+    background:rgba(46,36,80,0.75);
+    color:white;
+
+    font-size:0.65rem;
+    text-align:center;
+}
+
 #petName{
     text-align:center;
 
@@ -165,7 +209,6 @@ body{
 
     color:#2e2450;
 }
-
 
 .door-status{
     background:#dcd7ec;
@@ -177,6 +220,8 @@ body{
     text-align:center;
 
     margin-bottom:25px;
+
+    transition:0.3s;
 }
 
 .door-status p{
@@ -191,6 +236,33 @@ body{
     font-size:2.2rem;
 }
 
+/* puerta abierta en violeta */
+#estado.abierta{
+    color:#573f94;
+}
+
+#ubicacion{
+    color:#573f94;
+
+    font-size:2.2rem;
+}
+
+#tiempoAfuera{
+    margin-bottom:0;
+
+    font-size:0.9rem;
+}
+
+/* ALERTA: mucho tiempo afuera */
+.door-status.alerta{
+    background:#fee2e2;
+}
+
+.door-status.alerta #ubicacion,
+.door-status.alerta #tiempoAfuera{
+    color:#dc2626;
+    font-weight:600;
+}
 
 .controls{
     display:flex;
@@ -236,7 +308,10 @@ body{
     margin-bottom:30px;
 }
 
-.logs h3{
+/* TITULOS DE SECCION (todos iguales) */
+.logs h3,
+.chart-section h3,
+.stats-section h3{
     margin-bottom:15px;
 
     color:#2e2450;
@@ -268,7 +343,11 @@ body{
 
 }
 
-/* ESTADISTICAS */ 
+/* ESTADISTICAS */
+.stats-section{
+    margin-bottom:30px;
+}
+
 .stats-cards{
     display:flex;
     gap:12px;
@@ -303,8 +382,6 @@ body{
 
 .chart-section h3{
     margin-bottom:20px;
-
-    color:#2e2450;
 }
 
 .chart{
@@ -351,3 +428,4 @@ body{
 
     color:#2e2450;
 }
+
